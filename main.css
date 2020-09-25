@@ -1,0 +1,172 @@
+@font-face{
+    src: url(fonts/TitilliumWeb-Bold.ttf);
+    font-family: titillium-bold;
+}
+@font-face{
+  src: url(fonts/TitilliumWeb-Regular.ttf);
+  font-family: titillium;
+
+}
+
+*{
+   font-family: 'titillium';
+}
+h1{
+    margin: 0;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+.container{
+    width: 80%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    /* box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.1); */
+    padding: 5px 28px;
+}
+.article{
+    font-size: 20px;
+    width: 75%;
+}
+.header h1{
+    font-size: 42px;
+    font-family: 'titillium-bold';
+}
+.column{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    /* flex-direction: column;     */
+}
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.img-article-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+i{
+    margin: 0 8px;
+    cursor: pointer;
+    color: black;
+}
+.kalimba{
+    color: #72351c;
+}
+.header-toggle{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+a{
+  text-decoration: none;
+  color: #6c63ff;
+}
+body, html {
+    background: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    z-index: -1;
+}
+.btn {
+    border: 3px solid #1a1a1a;
+    display: inline-block;
+    padding: 2px;
+    position: relative;
+    text-align: center;
+    transition: background 600ms ease, color 600ms ease;
+}
+.toggle{
+    display: flex;
+    align-items: center;
+}
+input[type="radio"].toggle {
+    display: none;
+}
+input[type="radio"].toggle + label {
+    cursor: pointer;
+    min-width: 40px;
+}
+input[type="radio"].toggle + label:hover {
+    background: none;
+    color: #1a1a1a;
+}
+input[type="radio"].toggle + label:after {
+    background: #1a1a1a;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+    width: 100%;
+    z-index: -1;
+}
+input[type="radio"].toggle.toggle-left + label {
+    border-right: 0;
+}
+input[type="radio"].toggle.toggle-left + label:after {
+    left: 100%;
+}
+input[type="radio"].toggle.toggle-right + label {
+    margin-left: -5px;
+}
+input[type="radio"].toggle.toggle-right + label:after {
+    left: -100%;
+}
+input[type="radio"].toggle:checked + label {
+    cursor: default;
+    color: #fff;
+    transition: color 200ms;
+}
+input[type="radio"].toggle:checked + label:after {
+    left: 0;
+}
+
+@media only screen and (max-width:978px) {
+    .article{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:800px) {	
+  .article{
+      font-size: 16px;
+  }
+  .column{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+  .header h1{
+    font-size: 28px;
+    font-family: 'titillium-bold';
+  }
+  .container{
+    width: 93%;
+  }
+  .main{
+    min-height: 775px;
+  }
+  input[type="radio"].toggle + label {
+    cursor: pointer;
+    min-width: 28px;
+ }
+ .header-toggle{
+    justify-content: space-around;
+  } 
+}
